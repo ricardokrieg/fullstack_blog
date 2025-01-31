@@ -7,23 +7,39 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@eslint/js": "^9.17.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^9.17.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.4.2",
+    "prettier-config-standard": "^7.0.0",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.2",
     "vite": "^6.0.5"
-  }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "packageManager": "pnpm@8.10.5+sha512.9c161f433d85551c58f1b3a10b18cc3df72b5a02d2caee6566cc05b6f20addef947e795d90c39033bf92de55177ead69d87f62a9daadc91e7a2e3b58f49353a0"
 }
